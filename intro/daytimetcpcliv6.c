@@ -4,7 +4,7 @@ int
 main(int argc, char **argv)
 {
 	int					sockfd, n;
-	struct sockaddr_in6	servaddr;
+	struct sockaddr_in6	servaddr; // 使用sockaddr_in6
 	char				recvline[MAXLINE + 1];
 
 	if (argc != 2)

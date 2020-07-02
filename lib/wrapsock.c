@@ -15,6 +15,8 @@
  *warning: passing arg 2 of `bind' discards `const' from pointer target type
  *warning: passing arg 2 of `connect' discards `const' from pointer target type
  */
+// 定义包裹函数 来做最基础的错误检查 在发生错误时调用自己定义的错误处理函数
+
 
 #include	"unp.h"
 
@@ -166,7 +168,7 @@ void
 Listen(int fd, int backlog)
 {
 	char	*ptr;
-
+	// char* getenv(const char* name) 搜索name所指向的环境字符串 返回相关的值
 		/*4can override 2nd argument with environment variable */
 	if ( (ptr = getenv("LISTENQ")) != NULL)
 		backlog = atoi(ptr);
